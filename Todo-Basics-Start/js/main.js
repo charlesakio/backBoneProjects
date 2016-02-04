@@ -1,42 +1,52 @@
 // In the first few sections, we do all the coding here.
 // Later, you'll see how to organize your code into separate
 // files and modules
-var Vehicle = Backbone.Model.extend({
-  defaults: {
-    registrationNumber: 22
-  },
 
-  url: 'api/vehicles',
+// Create model Car
+var Car = Backbone.Model.extend({})
 
-  start: function () {
-    console.log('Vehicle started..Vroooom!!!')
-  },
+// Create a car collection
+var Cars = Backbone.Collection.extend({
+  model: Car
 })
 
-var vehicle = new Vehicle()
-vehicle.start()
+// Create a view of a car
+var CarView = Backbone.View.extend({
+  tagName: 'li',
 
-var Car = Vehicle.extend({
-  start: function () {
-    console.log('Car with registration number ' +
-      this.get('registrationNumber') + ' started')
-  },
+  render: function () {
+    this.$el.html(this.model.get('registrationNumber'))
 
-  validate: function (attrs) {
-    if (!attrs.registrationNumber) {
-      return 'Registration number is required'
-    }
+    return this
   }
-
 })
 
-var car = new Car()
-car.set({
-  registrationNumber: 'XL1887',
-  color: 'Blue'
-})
-car.start()
+// Create a view of a car
+var CarsView = Backbone.View.extend({
+  render: function () {
+    // Avoids an error at the end of the loop
+    var self = this
 
-// Remove registrationNumber
-car.unset('registrationNumber')
-car.isValid()
+    // Use backbones model iterator
+    this.model.each(function (car) {
+      // Create an instance of a car view
+      var carView = new CarView({model: car})
+      self.$el.append(carView.render().$el)
+    })
+  }
+})
+
+// Create an instance of car collections
+var cars = new Cars()
+
+// * Add models into collection Cars
+cars.add(new Car({registrationNumber: 'XLI887',
+colour: 'Blue' }))
+cars.add(new Car({registrationNumber: 'ZNP123',
+colour: 'Blue' }))
+cars.add(new Car({registrationNumber: 'XUV456',
+colour: 'Gray' }))
+
+// Crate an instance of cars collection view
+var carsView = new CarsView({ el: '#container', model: cars})
+carsView.render()
