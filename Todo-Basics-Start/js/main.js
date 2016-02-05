@@ -48,5 +48,5 @@ cars.add(new Car({registrationNumber: 'XUV456',
 colour: 'Gray' }))
 
 // Crate an instance of cars collection view
-var carsView = new CarsView({ el: '#container', model: cars})
+var carsView = new CarsView({ el: '#cars', model: cars})
 carsView.render()
