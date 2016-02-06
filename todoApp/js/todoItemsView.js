@@ -1,40 +1,46 @@
+/* global TodoItemsView, TodoItemView, TodoItem, Backbone, debug */
+/* eslint-disable no-unused-vars */
 var TodoItemsView = Backbone.View.extend({
-  tagName: "ul",
+  tagName: 'ul',
 
-  id: "todoItems",
+  id: 'todoItems',
 
-  initialize: function(options){
+  initialize: function (options) {
     debug(options)
 
-    this.model.on("add", this.onAddTodoItem, this);
+    this.model.on('add', this.onAddTodoItem, this)
+    this.model.on('remove', this.onRemoveTodoItem, this)
   },
 
-  onAddTodoItem: function(todoItem){
-    var view = new TodoItemView({ model: todoItem });
-      this.$el.append(view.render().$el);
+  onRemoveTodoItem: function (todoItem) {
+    console.log('Removed', todoItem)
+  },
+
+  onAddTodoItem: function (todoItem) {
+    var view = new TodoItemView({ model: todoItem })
+    this.$el.append(view.render().$el)
   },
 
   events: {
-    'click #add': "onClickAdd",
-    'keypress #newTodoItem': "onKeyPress"
+    'click #add': 'onClickAdd',
+    'keypress #newTodoItem': 'onKeyPress'
   },
 
-  onClickAdd: function(){
-    var $textBox = this.$("#newTodoItem");
+  onClickAdd: function () {
+    var $textBox = this.$('#newTodoItem')
 
-    //Add new item if text box is not empty
-    if($textBox.val()){
-    var todoItem = new TodoItem({ description: $textBox.val()})
-    this.model.add(todoItem)
-    //Clear textbox after entering new description
-    this.$("#newTodoItem").val("");
+    // Add new item if text box is not empty
+    if ($textBox.val()) {
+      var todoItem = new TodoItem({ description: $textBox.val() })
+      this.model.add(todoItem)
+      // Clear textbox after entering new description
+      this.$('#newTodoItem').val('')
     }
   },
 
-
-  onKeyPress: function(e) {
-    if (isEnter(e)){
-      this.onClickAdd();
+  onKeyPress: function (e) {
+    if (isEnter(e)) {
+      this.onClickAdd()
     }
   },
 
@@ -47,13 +53,14 @@ var TodoItemsView = Backbone.View.extend({
     this.model.each(function (todoItem) {
       var view = new TodoItemView({ model: todoItem })
       self.$el.append(view.render().$el)
-
     })
+
     return this
   }
-});
+})
 
-//Event function
-function isEnter(e){
-  return e.keyCode == 13
+// Event function
+function isEnter (e) {
+  return e.keyCode === 13
 }
+/* eslint-disable no-unused-vars */
