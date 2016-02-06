@@ -1,7 +1,15 @@
 var TodoItem = Backbone.Model.extend({
-  validate: function() {
+  defaults: {
+    isCompleted: false
+  },
+  validate: function (attrs) {
     if (attrs.description) {
-      return "Description is requred"
+      return 'Description is requred'
     }
+  },
+
+  toggle: function () {
+    this.set('isCompleted', !this.get('isCompleted'))
   }
+
 })
