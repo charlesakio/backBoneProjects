@@ -4,7 +4,7 @@ $(document).ready( function() {
     new TodoItem({ description: "TodoItem 2"})
   ])
 
-  var todoItemsView = new TodoItemsView()
+  var todoItemsView = new TodoItemsView({model: todoItems})
 
   $("body").append(todoItemsView.render().$el)
 })
