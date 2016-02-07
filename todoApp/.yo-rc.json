@@ -8,5 +8,6 @@
     "coffee": false,
     "includeRequireJS": false
   },
-  "generator-mocha": {}
+  "generator-mocha": {},
+  "generator-jasmine": {}
 }
