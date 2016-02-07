@@ -13,7 +13,7 @@ var TodoItemsView = Backbone.View.extend({
   },
 
   onRemoveTodoItem: function (todoItem) {
-    console.log('Removed', todoItem)
+    this.$('li#' + todoItem.id).remove()
   },
 
   onAddTodoItem: function (todoItem) {
