@@ -31,10 +31,12 @@ var TodoItemsView = Backbone.View.extend({
 
     // Add new item if text box is not empty
     if ($textBox.val()) {
-      var todoItem = new TodoItem({ description: $textBox.val() })
-      this.model.add(todoItem)
+      var todoItem = new TodoItem({ title: $textBox.val() })
+      //Adds the todoItem instance and save it to the server.
+      this.model.create(todoItem)
+
       // Clear textbox after entering new description
-      this.$('#newTodoItem').val('')
+      $textBox.val('')
     }
   },
 
