@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.0",
     "backbone": "~1.1.0",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "jasmine-jquery": "^2.1.1"
   },
   "devDependencies": {
     "jasmine-core": "jasmine#^2.4.1"
