@@ -13,14 +13,4 @@ var Album = Backbone.Collection.extend({
 
     return sortedSongs[sortedSongs.length - 1]
   }
-
-  describe('getPopularSong', function () {
-    it('should return undefined if the collection is empty.', function(){
-
-    });
-    it("should return the song with the highest number of plays if the collection is not empty", function() );
-
-  });
-
-
 })
