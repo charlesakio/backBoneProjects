@@ -6,5 +6,8 @@
 	"loadEagerly": [
 		"lib/**/*.js",
 		"src/**/*.js"
-	]
+	],
+	"plugins" {
+		"node": {}
+	}
 }

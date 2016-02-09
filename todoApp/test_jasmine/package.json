@@ -1,0 +1,31 @@
+{
+  "name": "test_jasmine",
+  "version": "1.0.0",
+  "description": "Test Jasmine Example",
+  "main": "SpecRunner.html",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlesakio/backboneProjects.git"
+  },
+  "keywords": [
+    "backbone",
+    "jasmine"
+  ],
+  "author": "Charles Javelona, Julio Tain Sueiras",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/charlesakio/backboneProjects/issues"
+  },
+  "homepage": "https://github.com/charlesakio/backboneProjects#readme",
+  "devDependencies": {
+    "backbone": "^1.2.3",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.2.1",
+    "jasmine": "^2.4.1",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^2.2.0"
+  }
+}

@@ -1,0 +1,7 @@
+language: node_js
+before_script:
+  - npm install grunt-cli bower -g
+install:
+  - cd todoApp/test_jasmine2 && npm install && bower install
+test:
+  - cd todoApp/test_jasmine2 && grunt
