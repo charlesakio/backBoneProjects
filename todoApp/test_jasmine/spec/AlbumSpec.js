@@ -6,6 +6,6 @@ describe('Album', function () {
   })
 
   it('url should be /api/songs', function () {
-    expect(album.url).toEqual('api/songs')
+    expect(album.url).toEqual('/api/songs')
   })
 })
