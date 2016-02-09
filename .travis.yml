@@ -3,5 +3,5 @@ before_script:
   - npm install grunt-cli bower -g
 install:
   - cd todoApp/test_jasmine2 && npm install && bower install
-test:
+script:
   - cd todoApp/test_jasmine2 && grunt
