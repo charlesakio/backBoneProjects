@@ -4,4 +4,4 @@ before_script:
 install:
   - npm install -g bower && cd todoApp/test_jasmine2 && npm install && bower install
 script:
-  - cd todoApp/test_jasmine2 && grunt
+  - grunt
