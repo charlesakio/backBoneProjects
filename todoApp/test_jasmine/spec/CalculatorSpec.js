@@ -26,7 +26,6 @@ describe('Calculator', function () {
       expect(function () {
         var result = calculator.add(2, 5)
       }).toThrowError('someError')
-
     })
   })
 })
