@@ -4,9 +4,9 @@ require.config({
   },
   paths: {
     jquery: '../bower_components/jquery/dist/jquery',
-    backbone: '../bower_components/backbone/backbone',
-    underscore: '../bower_components/underscore/underscore-min',
-    mustache: '../bower_components/mustache/mustache'
+    underscore: '../bower_components/underscore/underscore',
+    backbone: '../bower_components/backbone/backbone'
+  // mustache: '../bower_components/mustache/mustache'
   }
 })
 
