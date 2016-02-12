@@ -1,5 +1,7 @@
 /* global define */
-define(['backbone'], function (Backbone) {
+define([
+  'underscore',
+  'backbone'], function (_, Backbone) {
   var TodoItem = Backbone.Model.extend({
     defaults: {
       id: 0,
@@ -17,8 +19,8 @@ define(['backbone'], function (Backbone) {
     toggle: function () {
       this.set('completed', !this.get('completed'))
     }
-
   })
+  // TodoItem
 
   return TodoItem
 })

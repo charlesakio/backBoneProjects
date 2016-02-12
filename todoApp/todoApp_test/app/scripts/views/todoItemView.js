@@ -1,12 +1,15 @@
 /* global define */
-define(['jquery', 'backbone', 'mustache'], function ($, Backbone, Mustache) {
+define([
+  'jquery',
+  'backbone',
+  'mustache',
+  'models/TodoItem'], function ($, Backbone, Mustache, TodoItem) {
   var TodoItemView = Backbone.View.extend({
     tagName: 'li',
     initialize: function (options) {
       if (!(options && options.model)) {
         throw new Error('model is not specified')
       }
-
       this.model.on('change', this.render, this)
     },
 
@@ -34,11 +37,9 @@ define(['jquery', 'backbone', 'mustache'], function ($, Backbone, Mustache) {
       console.log(this.model.toJSON())
       var html = Mustache.render(template, this.model.toJSON())
       this.$el.html(html)
-      this.$el.html
-
       return this
     }
   })
-
+  // TodoItemView
   return TodoItemView
 })
