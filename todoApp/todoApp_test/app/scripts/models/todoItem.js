@@ -5,22 +5,24 @@ define([
   var TodoItem = Backbone.Model.extend({
     defaults: {
       id: 0,
+      title: '',
       completed: false
-    },
+    }
 
-    urlRoot: 'http://jsonplaceholder.typicode.com/todos',
+    // urlRoot: 'http://jsonplaceholder.typicode.com/todos',
 
-    validate: function (attrs) {
+    /* validate: function (attrs) {
       if (attrs.title) {
         return 'Title is required'
       }
     },
+     */
 
-    toggle: function () {
-      this.set('completed', !this.get('completed'))
-    }
+  /* toggle: function () {
+    this.set('completed', !this.get('completed'))
+  }
+  */
   })
   // TodoItem
-
   return TodoItem
 })
